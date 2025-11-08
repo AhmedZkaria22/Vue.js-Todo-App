@@ -5,9 +5,6 @@ import axios from "axios";
 const API_BASE = "http://localhost:3000";
 // For local JSON file, you'd use: const API_BASE = 'http://localhost:3000';
 
-// to know in netlify app or local
-const inProduction = window.location.href.indexOf("netlify");
-
 // CREATE - Add new todo
 async function addTodo(
   todoItem,
@@ -56,16 +53,10 @@ async function addTodo(
 async function getTodos() {
   try {
     const response = await axios.get(`${API_BASE}/todos`);
-    if (!localStorage.getItem("todos")) {
-      localStorage.setItem("todos", JSON.stringify(response.data));
-    }
-    if (inProduction > 0) {
-      return JSON.parse(localStorage.getItem("todos"));
-    }
     return response.data;
   } catch (error) {
     // console.error("Error get todos:", error);
-    alert("Error get todos", error);
+    alert(`Error get todos: ${error}`);
   }
 }
 
