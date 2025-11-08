@@ -1,0 +1,15 @@
+@import "./todoList";
+@import "./addSortBar";
+@import "./todoForm";
+
+* {
+  font-family: monospace;
+  margin: 0rem;
+  button,
+  a {
+    cursor: pointer;
+  }
+  p {
+    margin-bottom: 0.5rem;
+  }
+}

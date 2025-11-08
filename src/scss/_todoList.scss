@@ -1,0 +1,118 @@
+$text: #2f485e;
+$primary: #00b782;
+$white: #fbfdfd;
+$gray: #a0b9cf;
+
+.todos_list > section {
+  width: calc(100% - 3rem);
+  padding: 3rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem 1.5vw;
+
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr !important;
+  }
+  @media screen and (min-width: 500px) and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .todos_list_item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 8rem;
+    background-color: $white;
+    border-top: 0.25rem solid $primary;
+    border-radius: 0.25rem;
+    padding: 1rem 1.25rem 0.8rem;
+    box-shadow: 2px 2px 10px rgba(66, 185, 131, 0.2);
+    h3.todo_title {
+      padding-right: 2rem;
+      font-size: calc(1rem + 0.2vw);
+      color: #0c2214;
+
+      text-transform: capitalize;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+    p.todo_description {
+      padding-right: 2rem;
+      font-size: calc(0.9rem + 0.1vw);
+      color: $text;
+      clear: both;
+      margin-bottom: 1.5rem;
+    }
+    div.todo_date_tags {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 0px !important;
+      margin-top: auto !important;
+      width: 100%;
+
+      & > p {
+        font-size: calc(0.85rem + 0.1vw);
+        color: $gray;
+        margin-bottom: 0rem !important;
+      }
+      div.todo_tags_container {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        div.todo_tag {
+          width: fit-content;
+          display: flex;
+          align-items: center;
+          & > span {
+            font-size: calc(0.75rem + 0.05vw);
+            font-weight: 600;
+            padding: 0.25rem 0.5em;
+            border-radius: 0.35rem;
+            text-transform: capitalize;
+            background-color: rgba($gray, 0.4);
+            color: rgba($text, 0.7);
+          }
+        }
+      }
+    }
+    div.todo_actions {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+
+      & > button {
+        width: 2rem;
+        height: 2rem;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: all 0.3s ease;
+        box-shadow: 1px 1px 3.5px 0 $gray !important;
+        background-color: transparent !important;
+        &.todo_update {
+          background-image: url("../assets/edit.png");
+        }
+
+        &.todo_delete {
+          background-image: url("../assets/delete.png");
+          background-size: 110%;
+        }
+      }
+    }
+  }
+}

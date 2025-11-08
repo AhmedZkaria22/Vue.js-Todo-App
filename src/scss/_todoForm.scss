@@ -1,0 +1,131 @@
+$text: #2f485e;
+$primary: #00b782;
+$white: #fbfdfd;
+$gray: #a0b9cf;
+
+.app_model {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(#69788c, 0.5);
+  width: 100vw;
+  height: 100vh;
+
+  .add_todo_model,
+  .update_todo_model {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    position: relative;
+    h2 {
+      color: $text;
+      margin-bottom: 40px;
+    }
+    button.close_btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      padding: 0.3rem 0.6rem;
+      border: none !important;
+      background-color: $gray;
+      color: $white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    form#form {
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 10px;
+        margin-bottom: 30px;
+        label,
+        input,
+        textarea {
+          font-size: 1.2rem;
+          color: $text;
+        }
+        label {
+          font-weight: 700;
+          width: 100px;
+          text-align: left;
+        }
+        input,
+        textarea {
+          border: none !important;
+          border-bottom: 1px solid !important;
+          border-color: $gray;
+          width: 310px;
+          outline: none !important;
+          padding: 8px 12px;
+          &:focus {
+            border-color: $primary !important;
+            background-color: rgba($gray, 0.25);
+            border-radius: 4px 4px 0px 0px;
+          }
+        }
+        input#title {
+        }
+        textarea#description {
+        }
+        input#tags {
+        }
+      }
+      button[type="submit"] {
+        font-size: 1.3rem;
+        font-weight: 700;
+        padding: 0.5rem;
+        border-radius: 8px;
+        border: none !important;
+        background-color: $primary;
+        color: $white;
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .delete_box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 2px solid #f2727d;
+    border-radius: 8px;
+    background-color: #fff0f0;
+
+    p {
+      font-size: large;
+      font-weight: bold;
+      color: #242620;
+      width: 100%;
+    }
+
+    .delete_btn,
+    .cancel_btn {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .delete_btn {
+      background-color: #f2727d;
+      color: white;
+    }
+
+    .cancel_btn {
+      background-color: gray;
+      color: white;
+    }
+  }
+}
