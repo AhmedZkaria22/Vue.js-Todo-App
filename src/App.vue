@@ -80,6 +80,7 @@ export default {
   },
   async mounted() {
     this.todos = await getTodos();
+    document.title = "Vue Todo App";
   },
   methods: {
     async getTodo(id) {
