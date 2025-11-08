@@ -1,5 +1,3 @@
-readme
-
 # <h1> Vue.js Todo App </h1>
 
 By: *Ahmed Zakaria*
